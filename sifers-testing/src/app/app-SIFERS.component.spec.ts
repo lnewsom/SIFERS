@@ -7,6 +7,8 @@ import { render, screen } from '@testing-library/angular'
 import { createCat } from './cats.mock';
 
 describe('AppComponent', () => {
+  // no shared variables = no leaky tests
+  // no beforeEach = every test can easily have unique setup
   const setup = async(cats: Cat[] = [createCat()]) => {
     const mockCatService: Spy<CatService> = createSpyFromClass(CatService, {
       observablePropsToSpyOn: ['cats$']

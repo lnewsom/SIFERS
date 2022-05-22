@@ -16,6 +16,7 @@ describe('AppComponent', () => {
   let cat: Cat = {name, age: 2, sex: Sex.FEMALE, color: CatColor.TORTI, altered: true};
 
   describe('has a cat', () => {
+    // to get the mock api in unique states, we have to use separate beforeEach blocks
     beforeEach(async () => {
       name = 'Frank';
       cat = {name, age: 2, sex: Sex.FEMALE, color: CatColor.TORTI, altered: true};

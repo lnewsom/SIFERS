@@ -17,6 +17,8 @@ describe('AppComponent', () => {
 
   describe('has a cat', () => {
     beforeEach(async () => {
+      // this test fails because we are redeclaring the name var in a child scope
+      // This simple mistake could be buried in hundred of lines of code 
       let name = 'Frank';
       cat = {name, age: 2, sex: Sex.FEMALE, color: CatColor.TORTI, altered: true};
       mockCatService.cats$.nextWith([cat]);
