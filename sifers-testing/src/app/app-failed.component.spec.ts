@@ -17,7 +17,7 @@ describe('AppComponent', () => {
 
   describe('has a cat', () => {
     beforeEach(async () => {
-      name = 'Frank';
+      let name = 'Frank';
       cat = {name, age: 2, sex: Sex.FEMALE, color: CatColor.TORTI, altered: true};
       mockCatService.cats$.nextWith([cat]);
   
